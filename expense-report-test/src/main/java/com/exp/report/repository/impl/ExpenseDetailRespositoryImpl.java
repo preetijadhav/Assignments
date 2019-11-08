@@ -1,5 +1,7 @@
 package com.exp.report.repository.impl;
 
-public class ExpenseDetailRespositoryImpl {
+import com.exp.report.repository.ExpenseDetailRepositoryCustom;
+
+public class ExpenseDetailRespositoryImpl implements ExpenseDetailRepositoryCustom {
 
 }

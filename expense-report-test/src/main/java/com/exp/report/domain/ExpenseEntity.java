@@ -31,7 +31,7 @@ public class ExpenseEntity  implements Serializable {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private Long id;
 	
 	@Column(name="TITLE", length=200, nullable=false, unique=false)
 	private String title;
