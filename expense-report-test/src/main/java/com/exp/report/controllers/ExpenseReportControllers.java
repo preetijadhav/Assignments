@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.exp.report.domain.UserInfo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping(value="/api")
+@Slf4j
 public class ExpenseReportControllers {
 	
 	@PostMapping(value="/register", produces="application/json")
 	public ResponseEntity<Object> register(@RequestBody UserInfo userInfo) {
-		System.out.println("Eneterd the register user case flow");
+		log.info("User registration is in progress.");
 		return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
 	}	
 	
