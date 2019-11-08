@@ -1,4 +1,4 @@
-package com.exp.report.domain;
+package com.exp.report.dto;
 
 import lombok.Builder;
 import lombok.Data;
