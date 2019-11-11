@@ -1,6 +1,5 @@
 package com.exp.report.service.impl;
 
-import org.apache.tomcat.util.bcel.classfile.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			userDetailsRepository.save(userInfo.to());
 		} catch (Exception e) {
 			log.error("Error occured while saving user details");
+			e.printStackTrace();
 			return "Error occurred while saving user details - " + e.getMessage();
 		}
 		log.info("User details are saved successfully");

@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="expense_report.USER_DETAILS")
+@Table(name="USER_DETAILS")
 @Data
 @Builder
 public class UserDetailsEntity  implements Serializable {
