@@ -13,19 +13,19 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UserDetailsRepository userDetailsRepository;
-	
+
 	@Override
 	public String registerUser(UserInfo userInfo) {
 		log.info("Saving the user details");
 		try {
-		userDetailsRepository.save(userInfo.to());
-		}catch(Exception e) {
+			userDetailsRepository.save(userInfo.to());
+		} catch (Exception e) {
 			log.error("Error occured while saving user details");
-			return "Error occurred while saving user details - "+e.getMessage();
+			return "Error occurred while saving user details - " + e.getMessage();
 		}
 		log.info("User details are saved successfully");
 		return Constants.USER_SAVED;
