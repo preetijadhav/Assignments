@@ -1,5 +1,7 @@
 package com.exp.report.service;
 
-public interface UserDetailsService {
+import com.exp.report.dto.UserInfo;
 
+public interface UserDetailsService {
+	public String registerUser(UserInfo userInfo);
 }

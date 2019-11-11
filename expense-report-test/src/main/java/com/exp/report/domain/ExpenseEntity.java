@@ -12,9 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 /**
  * @author preeti
@@ -22,9 +20,7 @@ import lombok.ToString;
  */
 @Entity
 @Table(name="EXPENSE_DETAILS")
-@Getter
-@Setter
-@ToString
+@Data
 public class ExpenseEntity  implements Serializable {
     
 	private static final long serialVersionUID = 4865903039190150233L;
