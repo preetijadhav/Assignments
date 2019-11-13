@@ -24,9 +24,9 @@ public class UserDetailsServiceImplTest {
 	private UserDetailsService service = new UserDetailsServiceImpl();
 
 	@Test
-	public void registerUserTest() {
+	public void registerUserTest() throws UserDetailsServiceException {
 		UserInfo userInfo = UserInfo.builder().username("Test-1").password("Pass-1").build();
 		Mockito.when(userDetailsRepository.save(userInfo.to())).thenReturn(userInfo.to());
-		assertEquals(Constants.USER_SAVED, service.registerUser(userInfo));
+		assertEquals(userInfo, service.registerUser(userInfo));
 	}
 }

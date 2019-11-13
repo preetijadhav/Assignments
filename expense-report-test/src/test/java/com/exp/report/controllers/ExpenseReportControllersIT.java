@@ -18,12 +18,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static com.jayway.restassured.RestAssured.given;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ExpenseReportApplication.class)
 @TestPropertySource(value = { "classpath:application.properties" })
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@Slf4j
 public class ExpenseReportControllersIT {
 
 	@Value("${server.port}")
@@ -40,7 +43,7 @@ public class ExpenseReportControllersIT {
 					.contentType(ContentType.JSON).when().post(URI_POST_REGISTER).then()
 					.statusCode(HttpStatus.CREATED.value());
 		} catch (JsonProcessingException e) {
-			e.printStackTrace();
+			log.error("Error occurred while processing json response format. Message - "+e.getMessage());
 		}
 	}
 

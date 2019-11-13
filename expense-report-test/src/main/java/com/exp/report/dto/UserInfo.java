@@ -10,15 +10,17 @@ import lombok.Setter;
 @Builder
 @Data
 public class UserInfo {
+
+	private Integer id;
 	private String username;
 	private String password;
 
 	public UserDetailsEntity to() {
-		return UserDetailsEntity.builder().username(username).password(password).build();
+		return UserDetailsEntity.builder().id(id).username(username).password(password).build();
 	}
 
 	public static UserInfo from(UserDetailsEntity userDetailsEntity) {
-		return UserInfo.builder().username(userDetailsEntity.getUsername()).password(userDetailsEntity.getPassword())
-				.build();
+		return UserInfo.builder().id(userDetailsEntity.getId()).username(userDetailsEntity.getUsername())
+				.password(userDetailsEntity.getPassword()).build();
 	}
 }
