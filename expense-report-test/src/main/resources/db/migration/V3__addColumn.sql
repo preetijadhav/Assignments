@@ -1,0 +1,1 @@
+alter table USER_DETAILS add comments VARCHAR(50);
